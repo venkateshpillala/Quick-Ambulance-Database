@@ -7,13 +7,13 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.commons.exception.ResourceNotFoundException;
 import com.database.dao.IAmbulanceDao;
 import com.database.dao.IDriverDao;
 import com.database.dao.IDriverLogsDao;
 import com.database.entity.Ambulance;
 import com.database.entity.Driver;
 import com.database.entity.DriverLogs;
+import com.database.exception.ResourceNotFoundException;
 
 @Service
 public class DriverLogsServiceImple implements IDriverLogsService {

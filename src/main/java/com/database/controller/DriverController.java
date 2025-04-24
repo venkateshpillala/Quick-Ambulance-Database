@@ -14,7 +14,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.commons.dto.DriverDTO;
+import com.database.dto.DriverDTO;
 import com.database.entity.Driver;
 import com.database.service.IDriverService;
 import com.database.service.ISaveAndDeleteService;

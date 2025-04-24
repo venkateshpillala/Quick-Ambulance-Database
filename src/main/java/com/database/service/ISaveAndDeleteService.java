@@ -1,7 +1,7 @@
 package com.database.service;
 
-import com.commons.dto.DriverDTO;
-import com.commons.dto.UserDTO;
+import com.database.dto.DriverDTO;
+import com.database.dto.UserDTO;
 
 public interface ISaveAndDeleteService {
 	

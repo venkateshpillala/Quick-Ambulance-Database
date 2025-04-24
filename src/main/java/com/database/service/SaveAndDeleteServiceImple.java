@@ -4,8 +4,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.web.multipart.MultipartFile;
 
-import com.commons.dto.DriverDTO;
-import com.commons.dto.UserDTO;
+import com.database.dto.DriverDTO;
+import com.database.dto.UserDTO;
 import com.database.entity.Driver;
 import com.database.entity.Roles;
 import com.database.entity.User;

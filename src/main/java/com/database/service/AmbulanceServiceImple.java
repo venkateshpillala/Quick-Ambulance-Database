@@ -6,10 +6,10 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.web.multipart.MultipartFile;
 
-import com.commons.exception.DuplicateResourceException;
-import com.commons.exception.ResourceNotFoundException;
 import com.database.dao.IAmbulanceDao;
 import com.database.entity.Ambulance;
+import com.database.exception.DuplicateResourceException;
+import com.database.exception.ResourceNotFoundException;
 
 /*
  * This class provides all the required services of Ambulance database

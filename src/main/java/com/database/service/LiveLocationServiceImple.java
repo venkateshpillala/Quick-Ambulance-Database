@@ -5,9 +5,9 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.commons.exception.ResourceNotFoundException;
 import com.database.dao.ILiveLocationDao;
 import com.database.entity.LiveLocation;
+import com.database.exception.ResourceNotFoundException;
 
 @Service
 public class LiveLocationServiceImple implements ILiveLocationService {

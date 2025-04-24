@@ -12,7 +12,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.commons.dto.TrackDetailsDTO;
+import com.database.dto.TrackDetailsDTO;
 import com.database.entity.TrackDetails;
 import com.database.service.ITrackDetailsService;
 

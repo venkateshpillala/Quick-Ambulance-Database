@@ -5,10 +5,10 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.commons.exception.DuplicateResourceException;
-import com.commons.exception.ResourceNotFoundException;
 import com.database.dao.IUserDao;
 import com.database.entity.User;
+import com.database.exception.DuplicateResourceException;
+import com.database.exception.ResourceNotFoundException;
 
 /*
  * This class provides all the services of User database

@@ -7,9 +7,9 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.RestControllerAdvice;
 
-import com.commons.dto.ErrorResponseDTO;
-import com.commons.exception.DuplicateResourceException;
-import com.commons.exception.ResourceNotFoundException;
+import com.database.dto.ErrorResponseDTO;
+import com.database.exception.DuplicateResourceException;
+import com.database.exception.ResourceNotFoundException;
 
 @RestControllerAdvice
 public class GlobalExceptionHandler {
