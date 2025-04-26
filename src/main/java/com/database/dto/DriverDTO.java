@@ -2,8 +2,6 @@ package com.database.dto;
 
 import java.time.LocalDate;
 
-import org.springframework.web.multipart.MultipartFile;
-
 public class DriverDTO {
 
 	private String username;
@@ -12,7 +10,7 @@ public class DriverDTO {
 	private LocalDate dob;
 	private Long phone;
 	private String email;
-	private MultipartFile license;
+	private String license;
 	
 	public String getUsername() {
 		return username;
@@ -50,10 +48,10 @@ public class DriverDTO {
 	public void setEmail(String email) {
 		this.email = email;
 	}
-	public MultipartFile getLicense() {
+	public String getLicense() {
 		return license;
 	}
-	public void setLicense(MultipartFile license) {
+	public void setLicense(String license) {
 		this.license = license;
 	}
 	@Override

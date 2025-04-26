@@ -1,6 +1,5 @@
 package com.database.entity;
 
-import org.springframework.web.multipart.MultipartFile;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
@@ -10,7 +9,6 @@ import jakarta.persistence.Lob;
 import jakarta.persistence.Transient;
 import jakarta.validation.constraints.NotNull;
 import jakarta.validation.constraints.Size;
-
 @Entity
 @JsonIgnoreProperties({"hibernateLazyInitializer", "handler"})
 public class Ambulance {
@@ -31,7 +29,7 @@ public class Ambulance {
 	private Boolean status;
 	
 	@Transient
-	private MultipartFile book;
+	private String book;
 
 	public String getVehicleNumber() {
 		return vehicleNumber;
@@ -81,11 +79,11 @@ public class Ambulance {
 		this.status = status;
 	}
 
-	public MultipartFile getBook() {
+	public String getBook() {
 		return book;
 	}
 
-	public void setBook(MultipartFile book) {
+	public void setBook(String book) {
 		this.book = book;
 	}
 

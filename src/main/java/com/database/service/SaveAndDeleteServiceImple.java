@@ -1,8 +1,9 @@
 package com.database.service;
 
+import java.util.Base64;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import org.springframework.web.multipart.MultipartFile;
 
 import com.database.dto.DriverDTO;
 import com.database.dto.UserDTO;
@@ -76,7 +77,7 @@ public class SaveAndDeleteServiceImple implements ISaveAndDeleteService {
 			driver.setPhone(driverDto.getPhone());
 			driver.setStatus(false);
 			driver.setUsername(driverDto.getUsername().toLowerCase());
-			driver.setLicense(this.convertIntoBytesMultipartFile(driverDto.getLicense()));
+			driver.setLicense(this.convertBase64ToBytes(driverDto.getLicense()));
 			
 			role.setPassword(driverDto.getPassword());
 			role.setUsername(driverDto.getUsername().toLowerCase());
@@ -112,15 +113,8 @@ public class SaveAndDeleteServiceImple implements ISaveAndDeleteService {
 		return status;
 	}
 
-	private byte[] convertIntoBytesMultipartFile(MultipartFile file) {
-		byte[] binary = null;
-		try {
-			binary = file.getBytes();
-		}
-		catch(Exception e) {
-			e.printStackTrace();
-		}
-		return binary;
+	private byte[] convertBase64ToBytes(String file) {
+		return Base64.getDecoder().decode(file);
 	}
 
 }

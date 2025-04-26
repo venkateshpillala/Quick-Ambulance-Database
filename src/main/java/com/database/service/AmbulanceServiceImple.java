@@ -1,10 +1,10 @@
 package com.database.service;
 
+import java.util.Base64;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import org.springframework.web.multipart.MultipartFile;
 
 import com.database.dao.IAmbulanceDao;
 import com.database.entity.Ambulance;
@@ -34,7 +34,7 @@ public class AmbulanceServiceImple implements IAmbulanceService {
 			
 				ambulance.setVehicleNumber(ambulance.getVehicleNumber().toUpperCase());
 				ambulance.setStatus(false);
-				ambulance.setCbook(this.convertMultipartFileIntoBytes(ambulance.getBook()));
+				ambulance.setCbook(this.convertBase64ToBytes(ambulance.getBook()));
 				amb = dao.save(ambulance);
 		}
 		if(amb != null) 
@@ -88,17 +88,8 @@ public class AmbulanceServiceImple implements IAmbulanceService {
 		return status;
 	}
 	
-	private byte[] convertMultipartFileIntoBytes(MultipartFile file) {
-		byte[] binary = null;
-		try {
-			if(file != null)
-				binary = file.getBytes();
-		}
-		catch(Exception e) {
-			e.printStackTrace();
-		}
-		
-		return binary;
+	private byte[] convertBase64ToBytes(String file) {
+		return Base64.getDecoder().decode(file);
 	}
 	
 	private Ambulance updateNullValues(Ambulance ambulance) {
