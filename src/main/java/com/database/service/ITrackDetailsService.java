@@ -9,4 +9,5 @@ public interface ITrackDetailsService {
 
 	public Long saveBookingDetails(TrackDetailsDTO dto);
 	public List<TrackDetails> userHistory(String username);
+	public List<TrackDetails> driverHistory(String username);
 }

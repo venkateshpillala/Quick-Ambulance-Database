@@ -58,4 +58,11 @@ public class TrackDetailsServiceImple implements ITrackDetailsService {
 				.filter(track -> !track.isEmpty())
 				.orElseThrow(()-> new ResourceNotFoundException("NO_HISTORY_WITH "+username));
 	}
+
+	@Override
+	public List<TrackDetails> driverHistory(String username) {
+		return dao.findByDriverUsername(username.toLowerCase())
+				.filter(track -> !track.isEmpty())
+				.orElseThrow(() -> new ResourceNotFoundException("NO_HISTORY_WITH "+username));
+	}
 }

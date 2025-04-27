@@ -10,4 +10,5 @@ import com.database.entity.TrackDetails;
 public interface ITrackDetailsDao extends JpaRepository<TrackDetails, Long> {
 
 	Optional<List<TrackDetails>> findByUserUsername(String username);
+	Optional<List<TrackDetails>> findByDriverUsername(String username);
 }

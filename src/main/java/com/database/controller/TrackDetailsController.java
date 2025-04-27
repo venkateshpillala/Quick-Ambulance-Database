@@ -29,9 +29,15 @@ public class TrackDetailsController {
 		return new ResponseEntity<Long>(status, HttpStatus.OK);
 	}
 	
-	@GetMapping
+	@GetMapping("/user-history")
 	public ResponseEntity<List<TrackDetails>> getUserHistory(@RequestParam String username){
 		List<TrackDetails> list = service.userHistory(username);
+		return new ResponseEntity<List<TrackDetails>>(list, HttpStatus.OK);
+	}
+	
+	@GetMapping("/driver-history")
+	public ResponseEntity<List<TrackDetails>> getDriverHistory(@RequestParam String username){
+		List<TrackDetails> list = service.driverHistory(username);
 		return new ResponseEntity<List<TrackDetails>>(list, HttpStatus.OK);
 	}
 }
