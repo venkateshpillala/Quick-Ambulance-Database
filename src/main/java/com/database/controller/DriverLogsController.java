@@ -1,7 +1,9 @@
 package com.database.controller;
 
 import java.time.LocalDate;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -75,6 +77,16 @@ public class DriverLogsController {
 	public ResponseEntity<Long> updateLogout(@RequestParam String username){
 		Long status = driverLogService.updateLogoutByUsername(username);
 		return new ResponseEntity<Long>(status, HttpStatus.OK);
+	}
+	
+	@GetMapping("/vehicle-phone")
+	public ResponseEntity<Map<String, Object>> getDriverPhoneAndVehicleNumber(@RequestParam String username){
+		Map<String, Object> response = new HashMap<String, Object>();
+		DriverLogs dl = driverLogService.findByUsesrnameAndDate(username, LocalDate.now());
+		response.put("vehicleNumber", dl.getAmbulance().getVehicleNumber());
+		response.put("phone", dl.getDriver().getPhone());
+		return new ResponseEntity<Map<String,Object>>(response, HttpStatus.OK);
+				
 	}
 	
 }

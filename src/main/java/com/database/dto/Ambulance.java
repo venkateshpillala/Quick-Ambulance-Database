@@ -8,8 +8,6 @@ public class Ambulance {
 	private Long yearOfModel;
 	private String company;
 	
-	private byte[] cbook;
-	
 	private Boolean status;
 
 	public String getVehicleNumber() {
@@ -44,13 +42,6 @@ public class Ambulance {
 		this.company = company;
 	}
 
-	public byte[] getCbook() {
-		return cbook;
-	}
-
-	public void setCbook(byte[] cbook) {
-		this.cbook = cbook;
-	}
 
 	public Boolean getStatus() {
 		return status;
