@@ -15,6 +15,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.database.entity.DriverLogs;
+import com.database.projection.IVehicleAndPhoneProjection;
 import com.database.service.IDriverLogsService;
 
 @RestController
@@ -82,9 +83,9 @@ public class DriverLogsController {
 	@GetMapping("/vehicle-phone")
 	public ResponseEntity<Map<String, Object>> getDriverPhoneAndVehicleNumber(@RequestParam String username){
 		Map<String, Object> response = new HashMap<String, Object>();
-		DriverLogs dl = driverLogService.findByUsesrnameAndDate(username, LocalDate.now());
-		response.put("vehicleNumber", dl.getAmbulance().getVehicleNumber());
-		response.put("phone", dl.getDriver().getPhone());
+		IVehicleAndPhoneProjection vp = driverLogService.getVehicleNumberAndPhone(username);
+		response.put("vehicleNumber", vp.getVehicleNumber());
+		response.put("phone", vp.getPhone());
 		return new ResponseEntity<Map<String,Object>>(response, HttpStatus.OK);
 				
 	}

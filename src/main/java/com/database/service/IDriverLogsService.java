@@ -4,6 +4,7 @@ import java.time.LocalDate;
 import java.util.List;
 
 import com.database.entity.DriverLogs;
+import com.database.projection.IVehicleAndPhoneProjection;
 
 public interface IDriverLogsService {
 
@@ -16,5 +17,6 @@ public interface IDriverLogsService {
 	public Integer updateVehicleNumberByUsername(String username, String vehicleNumber);
 	public Long updateLogoutByUsername(String username);
 	public Long updateLogin(String username);
+	public IVehicleAndPhoneProjection getVehicleNumberAndPhone(String username);
 	
 }

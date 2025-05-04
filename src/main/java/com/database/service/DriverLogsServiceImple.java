@@ -14,6 +14,7 @@ import com.database.entity.Ambulance;
 import com.database.entity.Driver;
 import com.database.entity.DriverLogs;
 import com.database.exception.ResourceNotFoundException;
+import com.database.projection.IVehicleAndPhoneProjection;
 
 @Service
 public class DriverLogsServiceImple implements IDriverLogsService {
@@ -134,6 +135,14 @@ public class DriverLogsServiceImple implements IDriverLogsService {
 			throw new RuntimeException("SOMETHING_WENT_WRONG_TRY_AGAIN...!");
 
 		return status;
+	}
+
+	@Override
+	public IVehicleAndPhoneProjection getVehicleNumberAndPhone(String username) {
+		IVehicleAndPhoneProjection vp = dao.findVehicleInfoByUsernameAndDate(username, LocalDate.now());
+		if(vp == null)
+			throw new ResourceNotFoundException("RESOURCE_NOT_FOUND_WITH "+username);
+		return vp;
 	}
 
 }
