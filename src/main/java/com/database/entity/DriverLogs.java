@@ -22,11 +22,11 @@ public class DriverLogs {
     private LocalTime login; 
     private LocalTime logout; 
     
-    @ManyToOne(fetch = FetchType.LAZY)
+    @ManyToOne(fetch = FetchType.EAGER)
     @JoinColumn(name = "driverName")
     private Driver driver; 
 
-    @ManyToOne(fetch = FetchType.LAZY)
+    @ManyToOne(fetch = FetchType.EAGER)
     @JoinColumn(name = "vehicleNumber")
     private Ambulance ambulance;
 
