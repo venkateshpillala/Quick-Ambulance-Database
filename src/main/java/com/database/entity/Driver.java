@@ -4,9 +4,7 @@ import java.time.LocalDate;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
-import jakarta.persistence.Basic;
 import jakarta.persistence.Entity;
-import jakarta.persistence.FetchType;
 import jakarta.persistence.Id;
 import jakarta.persistence.Lob;
 import jakarta.validation.constraints.Email;
@@ -32,7 +30,6 @@ public class Driver {
 	
 	@Lob
 	@NotNull
-	@Basic(fetch = FetchType.EAGER)
 	private byte[] license;
 	
 	@NotNull

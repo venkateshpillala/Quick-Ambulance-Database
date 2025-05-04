@@ -3,9 +3,7 @@ package com.database.entity;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
-import jakarta.persistence.Basic;
 import jakarta.persistence.Entity;
-import jakarta.persistence.FetchType;
 import jakarta.persistence.Id;
 import jakarta.persistence.Lob;
 import jakarta.persistence.Transient;
@@ -26,7 +24,6 @@ public class Ambulance {
 	
 	@Lob
 	@NotNull
-	@Basic(fetch = FetchType.EAGER)
 	private byte[] cbook;
 	
 	private Boolean status;
